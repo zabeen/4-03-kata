@@ -16,7 +16,7 @@ namespace ListKata.Tests
         {
             var test = new LinkedListTest<SingleLinkedList>();
             test.FindOnEmptyListReturnsNull();
-            test.FindOnlyReturnsNewlyAddedItem();
+            test.FindOnlyReturnsNewlyAddedItems();
             test.ListCanLinkMultipleItems();
         }
     }

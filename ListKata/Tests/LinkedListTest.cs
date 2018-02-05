@@ -17,29 +17,32 @@ namespace ListKata.Tests
             Assert.Null(list.Find("fred"));
         }
 
-        public void FindOnlyReturnsNewlyAddedItem()
-        { 
-            const string addedVal = "fred";
-            const string missingVal = "wilma";
-
-            var list = new TList();
-            list.Add(addedVal);
-
-            Assert.AreEqual(addedVal, list.Find(addedVal).Value);
-            Assert.Null(list.Find(missingVal));
-        }
-
-        public void ListCanLinkMultipleItems()
+        public void FindOnlyReturnsNewlyAddedItems()
         {
             const string firstVal = "fred";
             const string secondVal = "wilma";
 
             var list = new TList();
             list.Add(firstVal);
-            list.Add(secondVal);
-
             Assert.AreEqual(firstVal, list.Find(firstVal).Value);
+            Assert.Null(list.Find(secondVal));
+
+            list.Add(secondVal);
             Assert.AreEqual(secondVal, list.Find(secondVal).Value);
+
+            Assert.AreEqual(new[]{firstVal,secondVal}, list.Values());
+        }
+
+        public void ListCanLinkMultipleItems()
+        {
+            /*
+            const string firstVal = "fred";
+            const string secondVal = "wilma";
+
+            var list = new TList();
+            list.Add(firstVal);
+            Assert.AreEqual(firstVal, list.Find(firstVal).Value);
+            */
         }
     }
 }

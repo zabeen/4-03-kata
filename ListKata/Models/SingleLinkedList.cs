@@ -22,7 +22,7 @@ namespace ListKata.Models
 
         public ListNode Find(string value)
         {
-            return null;
+            return FindByValueStartingAtHeadToNext(value);
         }
 
         public void Delete(ListNode node)
@@ -44,6 +44,22 @@ namespace ListKata.Models
         {
             return base.Equals(obj);
         }*/
+
+        private ListNode FindByValueStartingAtHeadToNext(string value)
+        {
+            var currentNode = _head;
+            while (true)
+            {
+                if (currentNode.Value.Equals(value))
+                    return currentNode;
+
+                var next = currentNode.Next;
+                if (next == null)
+                    return null;
+
+                currentNode = next;
+            }
+        }
 
         private void AddFirst(string value)
         {

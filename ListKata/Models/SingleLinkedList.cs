@@ -47,6 +47,9 @@ namespace ListKata.Models
 
         private ListNode FindByValueStartingAtHeadToNext(string value)
         {
+            if (_count == 0)
+                return null;
+
             var currentNode = _head;
             while (true)
             {

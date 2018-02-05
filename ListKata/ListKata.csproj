@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\IKataList.cs" />
+    <Compile Include="Models\ILinkedList.cs" />
     <Compile Include="Models\ListNode.cs" />
+    <Compile Include="Models\SingleLinkedList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -19,7 +19,6 @@ namespace ListKata.Models
         public void Add(string value)
         {
             ExtendListByReplacingHead(value);
-            _count++;
         }
 
         public ListNode Find(string value)
@@ -30,7 +29,6 @@ namespace ListKata.Models
         public void Delete(ListNode node)
         {
             RemoveNodeFromList(node);
-            _count--;
         }
 
         private string[] GetValuesFirstInFirstOut()
@@ -66,13 +64,18 @@ namespace ListKata.Models
         {
             var newNode = new ListNode(value, _head);
             _head = newNode;
+            _count++;
         }
 
         private void RemoveNodeFromList(ListNode node)
         {
+            if (node == null)
+                return;
+
             if (_head != null && _head.Value.Equals(node.Value) && _head.Next == node.Next)
             {
                 _head = _head.Next;
+                _count--;
                 return;
             }
 
@@ -83,6 +86,7 @@ namespace ListKata.Models
                 if (currentNode.Value.Equals(node.Value) && currentNode.Next == node.Next)
                 {
                     lastNode.Next = currentNode.Next;
+                    _count--;
                     return;
                 }
 

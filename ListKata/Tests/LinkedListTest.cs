@@ -47,6 +47,9 @@ namespace ListKata.Tests
             list.Add(fourthVal);
             Assert.AreEqual(new[] { firstVal, secondVal, thirdVal, fourthVal }, list.Values());
 
+            list.Delete(list.Find("itemNotInList"));
+            Assert.AreEqual(new[] { firstVal, secondVal, thirdVal, fourthVal }, list.Values());
+
             list.Delete(list.Find(secondVal));
             Assert.AreEqual(new[] { firstVal, thirdVal, fourthVal }, list.Values());
 

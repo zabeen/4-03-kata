@@ -28,16 +28,16 @@ namespace ListKata.Models
 
         public void Delete(ListNode node)
         {
-            _count--;
+            RemoveNodeFromList(node);
         }
 
         private string[] GetValuesFirstInFirstOut()
         {
             if (_count == 0)
-                return null;
+                return new string[0];
 
             string[] arr = new string[_count];
-            var nodeCounter = _count-1;
+            var nodeCounter = _count - 1;
             var currentNode = _head;
             do
             {
@@ -73,6 +73,36 @@ namespace ListKata.Models
             var newNode = new ListNode(value, _head);
             _head = newNode;
             _count++;
+        }
+
+        private void RemoveNodeFromList(ListNode node)
+        {
+            if (_count == 0)
+                return;
+
+            var lastNode = new ListNode();
+            var currentNode = _head;
+            var isCurrentNodeTheHead = true;
+            while (true)
+            {
+                if (currentNode.Value.Equals(node.Value) && currentNode.Next == node.Next)
+                {
+                    if (isCurrentNodeTheHead)
+                        _head = _head.Next;
+                    else
+                        lastNode.Next = currentNode.Next;
+
+                    _count--;
+                    return;
+                }
+
+                var nextNode = currentNode.Next;
+                if (nextNode == null)
+                    return;
+                lastNode = currentNode;
+                currentNode = nextNode;
+                isCurrentNodeTheHead = false;
+            }        
         }
     }
 }

@@ -20,7 +20,7 @@ namespace ListKata.Models
             if (node == null)
                 return;
 
-            if (Head != null && Head.Value.Equals(node.Value) && Head.Next == node.Next)
+            if (node.Equals(Head))
             {
                 Head = Head.Next;
                 Count--;
@@ -31,7 +31,7 @@ namespace ListKata.Models
             var currentNode = Head;
             while (currentNode != null)
             {
-                if (currentNode.Value.Equals(node.Value) && currentNode.Next == node.Next)
+                if (currentNode.Equals(node))
                 {
                     lastNode.Next = currentNode.Next;
                     Count--;

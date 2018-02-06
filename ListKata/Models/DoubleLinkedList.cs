@@ -21,12 +21,7 @@ namespace ListKata.Models
             if (node == null)
                 return;
 
-            if (Head != null
-                && Head.Value.Equals(node.Value)
-                && Head.Next == node.Next
-                && Head.Previous == node.Previous)
-                Head = node.Next;
-
+            if (node.Equals(Head)) Head = node.Next;
             if (node.Previous != null) node.Previous.Next = node.Next;
             if (node.Next != null) node.Next.Previous = node.Previous;
             Count--;

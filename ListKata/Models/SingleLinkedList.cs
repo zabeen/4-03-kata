@@ -49,20 +49,17 @@ namespace ListKata.Models
 
         private ListNode FindFromHeadToNext(string value)
         {
-            if (_count == 0)
-                return null;
-
             var currentNode = _head;
-            while (true)
+
+            while (currentNode != null)
             {
                 if (currentNode.Value.Equals(value))
                     return currentNode;
 
-                if (currentNode.Next == null)
-                    return null;
-
                 currentNode = currentNode.Next;
             }
+
+            return null;
         }
 
         private void ExtendListByReplacingHead(string value)
@@ -74,13 +71,11 @@ namespace ListKata.Models
 
         private void RemoveNodeFromList(ListNode node)
         {
-            if (_count == 0)
-                return;
-
             var lastNode = new ListNode();
             var currentNode = _head;
             var isCurrentNodeTheHead = true;
-            while (true)
+
+            while (currentNode != null)
             {
                 if (currentNode.Value.Equals(node.Value) && currentNode.Next == node.Next)
                 {
@@ -93,11 +88,8 @@ namespace ListKata.Models
                     return;
                 }
 
-                var nextNode = currentNode.Next;
-                if (nextNode == null)
-                    return;
                 lastNode = currentNode;
-                currentNode = nextNode;
+                currentNode = currentNode.Next;
                 isCurrentNodeTheHead = false;
             }        
         }

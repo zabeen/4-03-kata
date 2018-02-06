@@ -59,5 +59,11 @@ namespace ListKata.Tests
             list.Delete(list.Find(thirdVal));
             Assert.AreEqual(new string[0], list.Values());
         }
+
+        public void NoExceptionRaisedWhenDeletingFromEmptyList()
+        {
+            var list = new TList();
+            Assert.DoesNotThrow(() => list.Delete(list.Find("foo")));
+        }
     }
 }

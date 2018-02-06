@@ -70,7 +70,7 @@ namespace ListKata.Models
 
         private void RemoveNodeFromList(ListNode node)
         {
-            if (_head.Value.Equals(node.Value) && _head.Next == node.Next)
+            if (_head != null && _head.Value.Equals(node.Value) && _head.Next == node.Next)
             {
                 _head = _head.Next;
                 return;

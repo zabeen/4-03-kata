@@ -18,6 +18,7 @@ namespace ListKata.Tests
             test.FindOnEmptyListReturnsNull();
             test.FindOnlyReturnsNewlyAddedItems();
             test.ItemsAreRemovedFromList();
+            test.NoExceptionRaisedWhenDeletingFromEmptyList();
         }
     }
 }

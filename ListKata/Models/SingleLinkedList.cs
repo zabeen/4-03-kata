@@ -69,7 +69,7 @@ namespace ListKata.Models
 
         private void RemoveNodeFromList(ListNode node)
         {
-            var lastNode = new ListNode();
+            var lastNode = new ListNode(null, _head);
             var currentNode = _head;
             var isCurrentNodeTheHead = true;
 

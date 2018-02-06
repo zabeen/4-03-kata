@@ -11,11 +11,6 @@ namespace ListKata
     {
         static void Main(string[] args)
         {
-            var list = new SingleLinkedList();
-            list.Add("bob");
-            list.Add("kate");
-            list.Find("foo");
-            list.Find("bob");
         }
     }
 }

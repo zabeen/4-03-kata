@@ -15,12 +15,5 @@
             Value = value;
             Next = next;
         }
-
-        public ListNode(string value, ListNode next, ListNode previous)
-        {
-            Value = value;
-            Next = next;
-            Previous = previous;
-        }
     }
 }

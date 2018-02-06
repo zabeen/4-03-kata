@@ -20,5 +20,15 @@ namespace ListKata.Tests
             test.OnlyItemsInListAreRemoved();
             test.NoExceptionRaisedWhenDeletingFromEmptyList();
         }
+
+        [Test]
+        public void RunDoubleLinkedListTests()
+        {
+            var test = new LinkedListTest<DoubleLinkedList>();
+            test.FindOnEmptyListReturnsNull();
+            test.FindOnlyReturnsNewlyAddedItems();
+            test.OnlyItemsInListAreRemoved();
+            test.NoExceptionRaisedWhenDeletingFromEmptyList();
+        }
     }
 }

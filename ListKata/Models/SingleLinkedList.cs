@@ -8,10 +8,9 @@ namespace ListKata.Models
 {
     public class SingleLinkedList : ILinkedList
     {
-        public ListNode Head => _head;
         public int Count => _count;
 
-        private ListNode _head = null;
+        private ListNode _head;
         private int _count = 0;
 
         public string[] Values()
@@ -22,7 +21,6 @@ namespace ListKata.Models
         public void Add(string value)
         {
             ExtendListByReplacingHead(value);
-            _count++;
         }
 
         public ListNode Find(string value)
@@ -76,6 +74,7 @@ namespace ListKata.Models
         {
             var newNode = new ListNode(value, _head);
             _head = newNode;
+            _count++;
         }
     }
 }

@@ -4,7 +4,6 @@ namespace ListKata.Models
 {
     public interface ILinkedList
     {
-        ListNode Head { get; }
         int Count { get; }
 
         string[] Values();

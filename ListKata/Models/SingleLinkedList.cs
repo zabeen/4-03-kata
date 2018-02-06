@@ -34,13 +34,11 @@ namespace ListKata.Models
         private string[] GetValuesFirstInFirstOut()
         {
             string[] arr = new string[_count];
-            var nodeCounter = _count - 1;
             var currentNode = _head;
 
-            while(nodeCounter > -1)
+            for (var i = _count - 1; i > -1; i--)
             {
-                arr[nodeCounter] = currentNode.Value;
-                nodeCounter--;
+                arr[i] = currentNode.Value;
                 currentNode = currentNode.Next;
             }
 
@@ -91,7 +89,7 @@ namespace ListKata.Models
                 lastNode = currentNode;
                 currentNode = currentNode.Next;
                 isCurrentNodeTheHead = false;
-            }        
+            }
         }
     }
 }

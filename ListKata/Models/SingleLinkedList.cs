@@ -58,11 +58,10 @@ namespace ListKata.Models
                 if (currentNode.Value.Equals(value))
                     return currentNode;
 
-                var next = currentNode.Next;
-                if (next == null)
+                if (currentNode.Next == null)
                     return null;
 
-                currentNode = next;
+                currentNode = currentNode.Next;
             }
         }
 

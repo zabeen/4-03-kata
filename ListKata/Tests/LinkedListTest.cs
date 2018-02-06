@@ -33,7 +33,7 @@ namespace ListKata.Tests
             Assert.AreEqual(new[]{firstVal,secondVal}, list.Values());
         }
 
-        public void ItemsAreRemovedFromList()
+        public void OnlyItemsInListAreRemoved()
         {
             const string firstVal = "fred";
             const string secondVal = "wilma";

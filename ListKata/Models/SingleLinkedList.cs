@@ -8,8 +8,6 @@ namespace ListKata.Models
 {
     public class SingleLinkedList : ILinkedList
     {
-        public int Count => _count;
-
         private ListNode _head;
         private int _count = 0;
 
@@ -38,7 +36,7 @@ namespace ListKata.Models
             if (_count == 0)
                 return null;
 
-            string[] arr = new string[Count];
+            string[] arr = new string[_count];
             var nodeCounter = _count-1;
             var currentNode = _head;
             do

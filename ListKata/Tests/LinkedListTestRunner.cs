@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ListKata.Models;
+﻿using ListKata.Models;
 using NUnit.Framework;
 
 namespace ListKata.Tests

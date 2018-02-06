@@ -25,8 +25,7 @@
                     if (currentNode.Equals(node))
                     {
                         lastNode.Next = currentNode.Next;
-                        Count--;
-                        return;
+                        break;
                     }
 
                     lastNode = currentNode;

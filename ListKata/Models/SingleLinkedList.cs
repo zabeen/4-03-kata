@@ -9,7 +9,7 @@ namespace ListKata.Models
     public class SingleLinkedList : ILinkedList
     {
         private ListNode _head;
-        private int _count = 0;
+        private int _count;
 
         public string[] Values()
         {

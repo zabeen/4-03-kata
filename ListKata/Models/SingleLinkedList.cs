@@ -15,26 +15,26 @@
                 return;
 
             if (node.Equals(Head))
-            {
                 Head = Head.Next;
-                Count--;
-                return;
-            }
-
-            var lastNode = new ListNode(null, Head);
-            var currentNode = Head;
-            while (currentNode != null)
+            else
             {
-                if (currentNode.Equals(node))
+                var lastNode = new ListNode(null, Head);
+                var currentNode = Head;
+                while (currentNode != null)
                 {
-                    lastNode.Next = currentNode.Next;
-                    Count--;
-                    return;
-                }
+                    if (currentNode.Equals(node))
+                    {
+                        lastNode.Next = currentNode.Next;
+                        Count--;
+                        return;
+                    }
 
-                lastNode = currentNode;
-                currentNode = currentNode.Next;
+                    lastNode = currentNode;
+                    currentNode = currentNode.Next;
+                }
             }
+
+            Count--;
         }
     }
 }
